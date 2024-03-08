@@ -1,5 +1,8 @@
 import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
+import { getPosts } from "@/lib/data";
+
+
 /* FECH DATA WITH AN API
 const getData = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {next: {revalidate:3600}});
@@ -12,7 +15,11 @@ const getData = async () => {
 */
 export default async function BlogPage() {
 
+  // FECH DATA WITH AN API
   //const posts = await getData();
+
+  // FETCH DATA WITHOUT AN API
+  const posts = await getPosts();
 
   return (
     <main className={styles.container}>
