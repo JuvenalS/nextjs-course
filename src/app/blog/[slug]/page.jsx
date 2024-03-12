@@ -13,6 +13,18 @@ const getData = async (slug) => {
   return res.json();
 }
 */
+
+export const generateMetadata = async ({params}) => {
+  const {slug} = params;
+
+  const post = await getPost(slug);
+
+  return {
+    title: post.title,
+    description: podt.desc,
+  };
+};
+
 export default async function SinglePostPage({ params }) {
 
   const { slug } = params;
